@@ -38,7 +38,7 @@ class LoadTracker:
 
         try:
             # Make a single API request for all load numbers
-            load_response = requests.get(get_load_url, auth=HTTPBasicAuth('manvitha.g@fourkites.com', 'Manutanu*1309'), data=payload)
+            load_response = requests.get(get_load_url, auth=HTTPBasicAuth('username', 'password'), data=payload)
 
             if load_response.status_code == 200:
                 load_data = load_response.json().get("loads", [])
@@ -72,7 +72,7 @@ class LoadTracker:
         }
 
         try:
-            response = requests.post(post_load_url, auth=HTTPBasicAuth('manvitha.g@fourkites.com', 'Manutanu*1309'), json=data)
+            response = requests.post(post_load_url, auth=HTTPBasicAuth('username', 'password'), json=data)
             if response.status_code == 200:
                 print('Form submitted successfully:', response.json())
             else:
