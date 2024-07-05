@@ -1,0 +1,1 @@
+*/5 * * * * /usr/local/bin/call_api.sh >> /var/log/cron.log 2>&1
